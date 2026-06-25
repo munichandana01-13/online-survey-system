@@ -1,0 +1,380 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#edf2f7;
+
+    color:#222;
+}
+
+.custom-navbar{
+
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+    padding:14px;
+}
+
+.page-content{
+
+    padding:40px 0;
+}
+
+.container{
+
+    max-width:1150px;
+}
+
+.card{
+
+    border:none;
+
+    border-radius:18px;
+
+    background:white;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    overflow:hidden;
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.18);
+}
+
+h1{
+
+    font-weight:700;
+
+    color:#1e293b;
+}
+
+h2{
+
+    font-weight:700;
+
+    color:#1e293b;
+
+    margin-bottom:25px;
+}
+
+h3{
+
+    font-size:22px;
+
+    font-weight:600;
+}
+
+p{
+
+    color:#64748b;
+}
+
+.btn{
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    padding:10px 24px;
+
+    transition:.3s;
+}
+
+.btn-primary{
+
+    background:#2563eb;
+
+    border:none;
+}
+
+.btn-primary:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+}
+
+.btn-success{
+
+    background:#16a34a;
+
+    border:none;
+}
+
+.btn-success:hover{
+
+    background:#15803d;
+
+    transform:translateY(-2px);
+}
+
+.btn-info{
+
+    background:#0891b2;
+
+    color:white;
+
+    border:none;
+}
+
+.btn-info:hover{
+
+    background:#0e7490;
+
+    color:white;
+
+    transform:translateY(-2px);
+}
+
+.form-control{
+
+    border-radius:12px;
+
+    border:1px solid #dbe4ee;
+
+    padding:13px;
+}
+
+.form-control:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 .2rem rgba(37,99,235,.15);
+}
+
+.hero{
+
+    text-align:center;
+
+    padding:90px 20px;
+}
+
+.hero h1{
+
+    font-size:52px;
+}
+
+.hero p{
+
+    font-size:20px;
+
+    margin:20px auto;
+
+    max-width:650px;
+}
+
+.dashboard-card{
+
+    text-align:center;
+
+    padding:35px;
+}
+
+.dashboard-card i{
+
+    font-size:55px;
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+}
+
+.dashboard-card a{
+
+    text-decoration:none;
+}
+
+.survey-card{
+
+    padding:30px;
+
+    margin-bottom:25px;
+}
+
+.survey-card h3{
+
+    margin-bottom:15px;
+}
+
+.survey-card .btn{
+
+    margin-right:10px;
+}
+
+.radio-card{
+
+    border:2px solid #dbe4ee;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    margin-bottom:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.radio-card:hover{
+
+    border-color:#2563eb;
+
+    background:#eff6ff;
+}
+
+.analytics-card{
+
+    padding:30px;
+
+    text-align:center;
+}
+
+img{
+
+    max-width:100%;
+}
+.badge{
+
+    font-size:14px;
+
+    padding:8px 14px;
+}
+
+.survey-card{
+
+    border-left:6px solid #2563eb;
+}
+
+.survey-card h3{
+
+    color:#1e293b;
+
+    font-weight:700;
+}
+
+.survey-card p{
+
+    min-height:70px;
+}
+
+.card-body{
+
+    padding:30px;
+}
+
+.form-label{
+
+    font-weight:600;
+
+    margin-bottom:8px;
+}
+.radio-card{
+
+    display:block;
+
+    padding:18px 20px;
+
+    border:2px solid #dbe4ee;
+
+    border-radius:15px;
+
+    margin-bottom:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:18px;
+
+    font-weight:500;
+}
+
+.radio-card input{
+
+    margin-right:15px;
+}
+
+.radio-card:hover{
+
+    background:#eff6ff;
+
+    border-color:#2563eb;
+
+    transform:translateX(5px);
+}
+
+.analytics-card{
+
+    padding:50px;
+
+    text-align:center;
+}
+
+.analytics-card img{
+
+    border-radius:15px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.hero{
+
+    padding:120px 0;
+}
+
+.dashboard-card{
+
+    min-height:280px;
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-10px);
+}
+.hero{
+
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+    color:white;
+
+    border-radius:25px;
+
+    padding:90px;
+
+    box-shadow:0 20px 60px rgba(37,99,235,.25);
+}
+
+.hero h1{
+
+    color:white;
+}
+
+.hero p{
+
+    color:#dbeafe;
+}
+.report-card{
+
+    transition:.35s;
+}
+
+.report-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}

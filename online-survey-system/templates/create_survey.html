@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card p-5">
+
+                <div class="text-center mb-4">
+
+                    <i class="fa-solid fa-square-plus fa-4x text-primary"></i>
+
+                    <h2>Create New Survey</h2>
+
+                    <p class="text-muted">
+                        Create your survey and add unlimited questions.
+                    </p>
+
+                </div>
+
+                <form method="POST">
+
+                    <!-- Survey Title -->
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+                            Survey Title
+                        </label>
+
+                        <input
+                            type="text"
+                            name="title"
+                            class="form-control"
+                            placeholder="Enter Survey Title"
+                            required>
+
+                    </div>
+
+                    <!-- Description -->
+
+                    <div class="mb-4">
+
+                        <label class="form-label">
+                            Survey Description
+                        </label>
+
+                        <textarea
+                            name="description"
+                            rows="4"
+                            class="form-control"
+                            placeholder="Enter Survey Description"
+                            required></textarea>
+
+                    </div>
+
+                    <hr>
+
+                    <h4 class="mb-4">
+
+                        <i class="fa-solid fa-circle-question"></i>
+
+                        Survey Questions
+
+                    </h4>
+
+                    <!-- Questions Container -->
+
+                   <div id="questions">
+
+                        <div class="question card p-4 mb-4">
+
+                        <label class="form-label">
+
+                        Question 1
+
+                        </label>
+
+                        <input
+                        type="text"
+                        name="questions[]"
+                        class="form-control mb-3"
+                        placeholder="Enter your question"
+                        required>
+
+                        <label class="form-label">
+
+                        Question Type
+
+                        </label>
+
+                        <select
+                        class="form-select question-type mb-3"
+                        name="types[]"
+                        onchange="toggleOptions(this)">
+
+                        <option value="rating">
+
+                        ⭐ Rating
+
+                        </option>
+
+                        <option value="yes_no">
+
+                        👍 Yes / No
+
+                        </option>
+
+                        <option value="text">
+
+                        📝 Text Answer
+
+                        </option>
+
+                        <option value="mcq">
+
+                        🔘 Multiple Choice
+
+                        </option>
+
+                        </select>
+
+                        <div class="options-container" style="display:none;">
+
+                        <h6>Options</h6>
+
+                        <div class="options">
+
+                        <input
+                        type="text"
+                        name="options_1[]"
+                        class="form-control mb-2"
+                        placeholder="Option 1">
+
+                        <input
+                        type="text"
+                        name="options_1[]"
+                        class="form-control mb-2"
+                        placeholder="Option 2">
+
+                        </div>
+
+                        <button
+                        type="button"
+                        class="btn btn-sm btn-outline-secondary"
+                        onclick="addOption(this,1)">
+
+                        + Add Option
+
+                        </button>
+
+                        </div>
+
+                        </div>
+
+                        </div>
+                    <!-- Add Question Button -->
+
+                    <button
+                        type="button"
+                        id="addQuestion"
+                        class="btn btn-outline-primary mb-4">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Question
+
+                    </button>
+
+                    <!-- Submit -->
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary w-100">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Create Survey
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+
+
+let count = 1;
+
+document.getElementById("addQuestion").onclick = function () {
+
+    count++;
+
+    let card = document.createElement("div");
+
+    card.className = "question card p-4 mb-4";
+
+    card.innerHTML = `
+
+        <label class="form-label">
+
+            Question ${count}
+
+        </label>
+
+        <input
+            type="text"
+            name="questions[]"
+            class="form-control mb-3"
+            placeholder="Enter your question"
+            required>
+
+        <label class="form-label">
+
+            Question Type
+
+        </label>
+
+        <select
+            class="form-select question-type mb-3"
+            name="types[]"
+            onchange="toggleOptions(this)">
+
+            <option value="rating">⭐ Rating</option>
+
+            <option value="yes_no">👍 Yes / No</option>
+
+            <option value="text">📝 Text Answer</option>
+
+            <option value="mcq">🔘 Multiple Choice</option>
+
+        </select>
+
+        <div class="options-container" style="display:none;">
+
+            <h6>Options</h6>
+
+            <div class="options">
+
+                <input
+                    type="text"
+                    name="options_${count}[]"
+                    class="form-control mb-2"
+                    placeholder="Option 1">
+
+                <input
+                    type="text"
+                    name="options_${count}[]"
+                    class="form-control mb-2"
+                    placeholder="Option 2">
+
+            </div>
+
+            <button
+                type="button"
+                class="btn btn-sm btn-outline-secondary"
+                onclick="addOption(this, ${count})">
+
+                + Add Option
+
+            </button>
+
+        </div>
+
+    `;
+
+    document.getElementById("questions").appendChild(card);
+
+};
+
+
+function toggleOptions(select){
+
+    let container = select.parentElement.querySelector(".options-container");
+
+    if(select.value=="mcq"){
+
+        container.style.display="block";
+
+    }
+
+    else{
+
+        container.style.display="none";
+
+    }
+
+}
+
+
+function addOption(button,index){
+
+    let options = button.parentElement.querySelector(".options");
+
+    let total = options.children.length + 1;
+
+    let input = document.createElement("input");
+
+    input.type="text";
+
+    input.name=`options_${index}[]`;
+
+    input.placeholder=`Option ${total}`;
+
+    input.className="form-control mb-2";
+
+    options.appendChild(input);
+
+}
+
+</script>
+
+
+
+{% endblock %}

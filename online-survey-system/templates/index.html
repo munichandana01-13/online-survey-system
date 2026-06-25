@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="hero">
+
+        <h1>
+            Build Better Surveys.
+            <br>
+            Collect Smarter Insights.
+        </h1>
+
+        <p>
+
+            Create beautiful surveys, gather responses,
+            analyze data and generate professional reports
+            in just a few clicks.
+
+        </p>
+
+        <br>
+
+        <a href="/register" class="btn btn-primary btn-lg me-3">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            Register
+
+        </a>
+
+        <a href="/login" class="btn btn-success btn-lg">
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            Login
+
+        </a>
+
+    </div>
+
+    <div class="row mt-5">
+
+        <div class="col-md-4">
+
+            <div class="card dashboard-card">
+
+                <i class="fa-solid fa-clipboard-list"></i>
+
+                <h4>Create Surveys</h4>
+
+                <p>Create unlimited surveys in seconds.</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card dashboard-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h4>Collect Responses</h4>
+
+                <p>Gather feedback from students and users.</p>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card dashboard-card">
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+                <h4>Analyze Results</h4>
+
+                <p>Generate charts and reports instantly.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

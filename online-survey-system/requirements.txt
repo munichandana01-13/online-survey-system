@@ -1,0 +1,9 @@
+Flask
+Flask-MySQLdb
+gunicorn
+pandas
+numpy
+matplotlib
+openpyxl
+reportlab
+mysqlclient

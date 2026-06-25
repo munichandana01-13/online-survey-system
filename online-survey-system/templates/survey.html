@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+```
+<div class="card p-5">
+
+    <h2 class="text-center">{{ survey[1] }}</h2>
+
+    <p class="text-center text-muted">
+        {{ survey[2] }}
+    </p>
+
+    <hr>
+
+    <form method="POST">
+
+        {% for question in questions %}
+
+        <div class="mb-5">
+
+            <h5>
+                {{ loop.index }}. {{ question.question }}
+            </h5>
+
+            <br>
+
+            <!-- Rating -->
+
+            {% if question.type == "rating" %}
+
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="radio"
+                           name="question_{{ question.id }}"
+                           value="Excellent"
+                           required>
+                    <label class="form-check-label">Excellent</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="radio"
+                           name="question_{{ question.id }}"
+                           value="Good">
+                    <label class="form-check-label">Good</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="radio"
+                           name="question_{{ question.id }}"
+                           value="Average">
+                    <label class="form-check-label">Average</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="radio"
+                           name="question_{{ question.id }}"
+                           value="Poor">
+                    <label class="form-check-label">Poor</label>
+                </div>
+
+            <!-- Yes / No -->
+
+            {% elif question.type == "yes_no" %}
+
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="radio"
+                           name="question_{{ question.id }}"
+                           value="Yes"
+                           required>
+                    <label class="form-check-label">Yes</label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input"
+                           type="radio"
+                           name="question_{{ question.id }}"
+                           value="No">
+                    <label class="form-check-label">No</label>
+                </div>
+
+            <!-- Text -->
+
+            {% elif question.type == "text" %}
+
+                <textarea
+                    class="form-control"
+                    rows="3"
+                    name="question_{{ question.id }}"
+                    placeholder="Write your answer..."
+                    required></textarea>
+
+            <!-- MCQ -->
+
+            {% elif question.type == "mcq" %}
+
+                {% for option in question.options %}
+
+                    <div class="form-check">
+
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="question_{{ question.id }}"
+                            value="{{ option[0] }}"
+                            required>
+
+                        <label class="form-check-label">
+                            {{ option[0] }}
+                        </label>
+
+                    </div>
+
+                {% endfor %}
+
+            {% endif %}
+
+        </div>
+
+        <hr>
+
+        {% endfor %}
+
+        <button class="btn btn-success w-100">
+            Submit Survey
+        </button>
+
+    </form>
+
+</div>
+```
+
+</div>
+
+{% endblock %}

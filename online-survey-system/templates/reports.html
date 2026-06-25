@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+```
+<div class="row justify-content-center">
+
+    <div class="col-lg-8">
+
+        <div class="card p-5 text-center">
+
+            <i class="fa-solid fa-file-arrow-down fa-4x text-primary mb-4"></i>
+
+            <h2>Survey Reports</h2>
+
+            <p class="text-muted mb-5">
+                Export your survey responses and analytics in different formats.
+            </p>
+
+            <div class="row g-4">
+
+                <div class="col-md-6">
+
+                    <div class="card h-100 p-4 border-0 shadow-sm">
+
+                        <i class="fa-solid fa-file-pdf fa-4x text-danger mb-3"></i>
+
+                        <h4>PDF Report</h4>
+
+                        <p class="text-muted">
+                            Download a professional PDF report containing survey analytics.
+                        </p>
+
+                        <a href="/download-pdf"
+                           class="btn btn-danger w-100">
+
+                            <i class="fa-solid fa-download"></i>
+
+                            Download PDF
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="card h-100 p-4 border-0 shadow-sm">
+
+                        <i class="fa-solid fa-file-excel fa-4x text-success mb-3"></i>
+
+                        <h4>Excel Report</h4>
+
+                        <p class="text-muted">
+                            Export survey responses in Excel format for further analysis.
+                        </p>
+
+                        <a href="/download-excel"
+                           class="btn btn-success w-100">
+
+                            <i class="fa-solid fa-download"></i>
+
+                            Download Excel
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mt-5">
+
+                <a href="/dashboard"
+                   class="btn btn-primary">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to Dashboard
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+```
+
+</div>
+
+{% endblock %}

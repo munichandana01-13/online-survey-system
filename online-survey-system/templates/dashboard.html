@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="text-center mb-5">
+
+        <h1>Dashboard</h1>
+
+        <p class="text-muted">
+            Manage surveys, collect responses and analyze results.
+        </p>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-lg-4">
+
+            <div class="card dashboard-card h-100">
+
+                <i class="fa-solid fa-square-plus"></i>
+
+                <h3>Create Survey</h3>
+
+                <p>Create a new survey for your audience.</p>
+
+                <a href="/create-survey" class="btn btn-primary">
+                    Create Now
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card dashboard-card h-100">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <h3>Survey List</h3>
+
+                <p>View all available surveys.</p>
+
+                <a href="/surveys" class="btn btn-success">
+                    Open Surveys
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+
+            <div class="card dashboard-card h-100">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <h3>Reports</h3>
+
+                <p>Download survey reports in PDF or Excel.</p>
+
+                <a href="/reports" class="btn btn-info">
+                    View Reports
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
